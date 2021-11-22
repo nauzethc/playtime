@@ -1,0 +1,27 @@
+{
+  "name": "playtime",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "nodemon --watch server server/index.js",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "howlongtobeat-api": "^1.0.2",
+    "koa": "^2.13.4",
+    "koa-logger": "^3.2.1",
+    "underscore": "^1.13.1",
+    "vue": "^3.2.16",
+    "vue-chart-3": "^0.5.11",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "nodemon": "^2.0.15",
+    "standard": "^16.0.4",
+    "vite": "^2.6.4",
+    "vite-plugin-pwa": "^0.11.6"
+  }
+}
