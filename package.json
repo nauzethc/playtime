@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "dev:server": "nodemon --watch server server/index.js",
+    "dev:server": "nodemon --watch api api/index.js",
     "build": "vite build",
     "serve": "vite preview",
-    "start": "node server/index.js",
+    "start": "node api/index.js",
     "lint": "standard --plugin vue ./src/**/*.{js,vue}"
   },
   "dependencies": {
