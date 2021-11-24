@@ -5,7 +5,9 @@
     "dev": "vite",
     "dev:server": "nodemon --watch server server/index.js",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "start": "node server/index.js",
+    "lint": "standard --plugin vue ./src/**/*.{js,vue}"
   },
   "dependencies": {
     "@koa/router": "^10.1.1",
@@ -19,6 +21,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-vue": "^8.1.1",
     "nodemon": "^2.0.15",
     "standard": "^16.0.4",
     "vite": "^2.6.4",
