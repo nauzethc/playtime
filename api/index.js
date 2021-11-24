@@ -2,15 +2,17 @@
 const Koa = require('koa')
 const Router = require('@koa/router')
 const logger = require('koa-logger')
+const cors = require('@koa/cors')
 const howlongtobeat = require('howlongtobeat-api')
 
 // Init
-const PORT = process.env.PLAYTIME_BACKEND_PORT || 4000
+const PORT = process.env.API_PORT || 4000
 const app = new Koa()
 const router = new Router({ prefix: '/api' })
 
 // Middleware
 app.use(logger())
+app.use(cors())
 app.use(router.routes()).use(router.allowedMethods())
 
 // Routes
