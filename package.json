@@ -2,14 +2,15 @@
   "name": "playtime",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "MODE=development vite",
     "dev:server": "nodemon --watch api api/index.js",
-    "build": "vite build",
+    "build": "MODE=production vite build",
     "serve": "vite preview",
     "start": "node api/index.js",
     "lint": "standard --plugin vue ./src/**/*.{js,vue}"
   },
   "dependencies": {
+    "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
     "howlongtobeat-api": "^1.0.2",
     "koa": "^2.13.4",
