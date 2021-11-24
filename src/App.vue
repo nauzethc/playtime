@@ -32,7 +32,7 @@ const isHome = computed(() => route.name === 'home')
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 #app > header {
