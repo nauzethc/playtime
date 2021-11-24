@@ -34,8 +34,8 @@ export default defineComponent({
           { label: 'Playing', value: this.game.stats.playing },
           { label: 'Beat', value: this.game.stats.beat },
           { label: 'Backlogs', value: this.game.stats.backlogs },
-          { label: 'Rating', value: `${(this.game.stats.rating || 0) * 100}%` },
-          { label: 'Retired', value: `${(this.game.stats.retired || 0) * 100}%` },
+          { label: 'Rating', value: `${((this.game.stats.rating || 0) * 100).toFixed(1)}%` },
+          { label: 'Retired', value: `${((this.game.stats.retired || 0) * 100).toFixed(1)}%` },
           { label: 'Replays', value: this.game.stats.replays }
         ]
       }
@@ -93,7 +93,7 @@ export default defineComponent({
   <Error v-else-if="error" :error="error" />
   <div id="game-page" v-else-if="game">
     <!-- Header -->
-    <div class="header" :style="{ backgroundImage: `url(${game.imageUrl})` }">
+    <div class="header">
       <div class="media">
         <img class="cover" :src="game.imageUrl" :alt="game.name" />
       </div>
@@ -115,11 +115,7 @@ export default defineComponent({
     </div>
 
     <!-- Additional metdata -->
-    <div
-      class="additional-data"
-      :class="{ collapsed }"
-      :style="{ backgroundImage: `url(${game.imageUrl})` }"
-    >
+    <div class="additional-data" :class="{ collapsed }">
       <p>{{ game.description }}</p>
     </div>
     <button id="expand-button" @click.prevent="collapsed = !collapsed">
@@ -152,7 +148,7 @@ export default defineComponent({
   align-items: center;
 }
 #game-page .header {
-  background-size: 1px 1px;
+  background-color: var(--bg-shade-1);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -212,11 +208,9 @@ export default defineComponent({
   font-weight: 500;
 }
 #game-page .additional-data {
+  background-color: var(--bg-shade-2);
   padding-block: 2em;
   padding-inline: 1em;
-  background-size: 1px 1px;
-  background-color: var(--bg-color);
-  background-blend-mode: screen;
   text-shadow: 0 1px hsl(0 0% 50% / 0.7);
 }
 #game-page .additional-data.collapsed {
@@ -233,14 +227,16 @@ export default defineComponent({
   margin-top: -1.25em;
   margin-right: 1em;
   align-self: flex-end;
-  background-color: var(--bg-shade-1);
+  background-color: var(--bg-shade-2);
   color: var(--fg-color);
   transition: background-color 0.3s ease;
 }
-#game-page #expand-button:hover,
-#game-page #expand-button:focus {
+#game-page #expand-button:hover {
   outline: none;
-  background-color: var(--bg-shade-2);
+  background-color: var(--accent-color);
+}
+#game-page .additional-data.collapsed + #expand-button {
+  background-color: var(--bg-shade-1);
 }
 #game-page .gameplays {
   display: flex;

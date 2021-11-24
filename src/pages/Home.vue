@@ -44,6 +44,10 @@ function submit({ search }) {
 #home-page .sub-logo a:focus {
   color: var(--accent-color);
 }
+#home-page .basic-form {
+  width: 100%;
+  max-width: 400px;
+}
 
 @media (min-width: 768px) {
   #home-page .logo {
