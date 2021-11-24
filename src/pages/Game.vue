@@ -63,7 +63,7 @@ export default defineComponent({
     async fetchData() {
       this.pending = true
       try {
-        const res = await this.$fetch(`/api/games/${this.id}`)
+        const res = await this.$fetch(`${API_BASE_URL}/games/${this.id}`)
         if (res.status === 200) {
           this.game = await res.json()
           this.error = null

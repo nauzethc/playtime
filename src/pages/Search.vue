@@ -34,7 +34,7 @@ export default defineComponent({
       this.pending = true
       try {
         const query = new URLSearchParams(this.$route.query)
-        const res = await this.$fetch(`/api/games?${query}`)
+        const res = await this.$fetch(`${API_BASE_URL}/games?${query}`)
         if (res.status === 200) {
           const { total, data } = await res.json()
           this.games = data
@@ -54,7 +54,7 @@ export default defineComponent({
         try {
           this.page = this.page + 1
           const query = new URLSearchParams({ ...this.$route.query, page: this.page })
-          const res = await this.$fetch(`/api/games?${query}`)
+          const res = await this.$fetch(`${API_BASE_URL}/games?${query}`)
           if (res.status === 200) {
             const { data } = await res.json()
             this.games = [...this.games, ...data]
