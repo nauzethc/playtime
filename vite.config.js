@@ -9,7 +9,7 @@ export default defineConfig({
   define: {
     API_BASE_URL: IS_DEVEL
       ? JSON.stringify(`http://localhost:${PORT}/api`)
-      : JSON.stringify('http://www.somehost.com/api')
+      : JSON.stringify('/.netlify/functions')
   },
   plugins: [
     vue(),
