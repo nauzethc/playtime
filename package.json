@@ -1,20 +1,15 @@
 {
   "name": "playtime",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Nauzet Hernandez <nauzethc@gmail.com>",
   "scripts": {
     "dev": "MODE=development vite",
-    "dev:server": "nodemon --watch api api/index.js",
     "build": "MODE=production vite build",
     "serve": "vite preview",
-    "start": "node api/index.js",
     "lint": "standard --plugin vue ./src/**/*.{js,vue}"
   },
   "dependencies": {
-    "@koa/cors": "^3.1.0",
-    "@koa/router": "^10.1.1",
     "howlongtobeat-api": "^1.0.2",
-    "koa": "^2.13.4",
-    "koa-logger": "^3.2.1",
     "underscore": "^1.13.1",
     "vue": "^3.2.16",
     "vue-chart-3": "^0.5.11",
@@ -23,7 +18,6 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "eslint-plugin-vue": "^8.1.1",
-    "nodemon": "^2.0.15",
     "standard": "^16.0.4",
     "vite": "^2.6.4",
     "vite-plugin-pwa": "^0.11.6"
