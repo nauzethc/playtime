@@ -1,6 +1,7 @@
 <script>
 import { defineComponent } from 'vue'
 import Spinner from '../components/Spinner.vue'
+import Error from '../components/Error.vue'
 import GameplayTable from '../components/game/GameplayTable.vue'
 import GameplayChart from '../components/game/GameplayChart.vue'
 
@@ -14,6 +15,7 @@ export default defineComponent({
   },
   components: {
     Spinner,
+    Error,
     GameplayTable,
     GameplayChart
   },
@@ -62,8 +64,12 @@ export default defineComponent({
       this.pending = true
       try {
         const res = await fetch(`/api/games/${this.id}`)
-        this.game = await res.json()
-        this.error = null
+        if (res.status === 200) {
+          this.game = await res.json()
+          this.error = null
+        } else {
+          this.error = new Error(`Couldn't retrieve data from server`)
+        }
       } catch (error) {
         this.error = error
       }
@@ -84,6 +90,7 @@ export default defineComponent({
 
 <template>
   <Spinner v-if="pending" />
+  <Error v-else-if="error" :error="error" />
   <div id="game-page" v-else-if="game">
     <!-- Header -->
     <div class="header" :style="{ backgroundImage: `url(${game.imageUrl})` }">

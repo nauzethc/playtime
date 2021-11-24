@@ -1,6 +1,7 @@
 <script>
 import { defineComponent } from 'vue'
 import Spinner from '../components/Spinner.vue'
+import Error from '../components/Error.vue'
 import SearchForm from '../components/search/SearchForm.vue'
 import GameResult from '../components/search/GameResult.vue'
 
@@ -8,6 +9,7 @@ export default defineComponent({
   name: 'Search',
   components: {
     Spinner,
+    Error,
     SearchForm,
     GameResult
   },
@@ -17,6 +19,7 @@ export default defineComponent({
       games: [],
       error: null,
       pending: false,
+      errorPage: null,
       pendingPage: false,
       page: 1
     }
@@ -32,10 +35,14 @@ export default defineComponent({
       try {
         const query = new URLSearchParams(this.$route.query)
         const res = await fetch(`/api/games?${query}`)
-        const { total, data } = await res.json()
-        this.games = data
-        this.total = total
-        this.error = null
+        if (res.status === 200) {
+          const { total, data } = await res.json()
+          this.games = data
+          this.total = total
+          this.error = null
+        } else {
+          this.error = new Error(`Couldn't retrieve data from server`)
+        }
       } catch (error) {
         this.error = error
       }
@@ -48,11 +55,15 @@ export default defineComponent({
           this.page = this.page + 1
           const query = new URLSearchParams({ ...this.$route.query, page: this.page })
           const res = await fetch(`/api/games?${query}`)
-          const { data } = await res.json()
-          this.games = [...this.games, ...data]
-          this.error = null
+          if (res.status === 200) {
+            const { data } = await res.json()
+            this.games = [...this.games, ...data]
+            this.errorPage = null
+          } else {
+            this.errorPage = new Error(`Couldn't retrieve data from server`)
+          }
         } catch (error) {
-          this.error = error
+          this.errorPage = error
         }
         this.pendingPage = false
       }
@@ -91,10 +102,12 @@ export default defineComponent({
   <div id="search-page">
     <SearchForm :initial-data="$route.query" @submit="submit" />
     <Spinner v-if="pending" />
+    <Error v-else-if="error" :error="error" />
     <div class="results" v-else>
       <GameResult v-for="game in games" :key="game.id" :data="game" />
     </div>
     <Spinner v-if="pendingPage" />
+    <Error v-else-if="errorPage" :error="errorPage" />
     <div id="load-more" />
   </div>
 </template>
