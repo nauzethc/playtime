@@ -54,6 +54,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1em;
   padding-block: .5em;
   padding-inline: 1em;
   position: fixed;
