@@ -32,7 +32,6 @@ In order to test app on local development you have to implement some API server.
 At `examples` folder you'll find a basic example ready to launch.
 
 ```bash
-$ cd examples
-$ npm i koa @koa/router koa-logger @koa/cors howlongtobeat-api
-$ node server.js
+$ npm i --no-save koa @koa/router koa-logger @koa/cors howlongtobeat-api
+$ node examples/server.js
 ```
