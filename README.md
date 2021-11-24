@@ -1,7 +1,38 @@
-# Vue 3 + Vite
+# PlayTime
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+HowLongToBeat.com clone made with Vue 3, Vite and [Netlify functions](https://www.netlify.com/products/functions/)
 
-## Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+### Features
+
+* Mobile-first and responsive UX
+* [howlongtobeat-api](https://github.com/nauzethc/howlongtobeat-api) to retrieve games data from HowLongToBeat.com (scrapping)
+* [vite-plugin-pwa](https://github.com/antfu/vite-plugin-pwa) to automate ServiceWorker generation
+* Charts with [vue-chart-3](https://github.com/victorgarciaesgi/vue-chart-3)
+
+
+### External resources
+
+* Icons from [heroicons.dev](https://github.com/zaydek/heroicons.dev)
+* Colors from [TailwindCSS](https://tailwindcss.com/)
+
+
+## Run
+
+```bash
+npm install
+npm run dev
+```
+Then go to http://localhost:3000/
+
+
+## Backend
+
+In order to test app on local development you have to implement some API server.
+At `examples` folder you'll find a basic example ready to launch.
+
+```bash
+$ cd examples
+$ npm i koa @koa/router koa-logger @koa/cors howlongtobeat-api
+$ node server.js
+```
