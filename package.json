@@ -1,6 +1,6 @@
 {
   "name": "playtime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Nauzet Hernandez <nauzethc@gmail.com>",
   "scripts": {
     "dev": "MODE=development vite",
