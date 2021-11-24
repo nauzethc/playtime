@@ -21,7 +21,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
-    "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-vue": "^8.1.1",
     "nodemon": "^2.0.15",
     "standard": "^16.0.4",
