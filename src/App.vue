@@ -1,5 +1,7 @@
 <script setup>
 import Logo from './components/Logo.vue'
+import PWA from './components/PWA.vue'
+
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -8,6 +10,7 @@ const isHome = computed(() => route.name === 'home')
 </script>
 
 <template>
+  <PWA />
   <header v-if="!isHome">
     <Logo />
   </header>
