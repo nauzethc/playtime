@@ -37,6 +37,7 @@ export default defineComponent({
   position: relative;
   display: flex;
   align-items: center;
+  padding: 0.5em 0;
   padding-inline: 0.5em;
 }
 .progress-bar .fill-bar {
@@ -49,6 +50,7 @@ export default defineComponent({
   background-color: currentColor;
   display: flex;
   align-items: center;
+  padding: 0 0.5em;
   padding-inline: 0.5em;
   animation: fill-bar 1s ease forwards;
   transition: background-color 0.3s ease;
@@ -65,6 +67,7 @@ export default defineComponent({
   width: 100%;
   min-width: fit-content;
   align-items: center;
+  padding: 0 .5em;
   padding-inline: 0.5em;
   z-index: 2;
   cursor: pointer;

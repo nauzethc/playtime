@@ -55,6 +55,7 @@ export default defineComponent({
   align-items: center;
   justify-content: space-between;
   gap: 1em;
+  padding: .5em 1em;
   padding-block: .5em;
   padding-inline: 1em;
   position: fixed;
@@ -72,6 +73,7 @@ export default defineComponent({
   background-color: var(--bg-shade-1);
   color: inherit;
   border: 0;
+  padding: .5em .8em;
   padding-block: .5em;
   padding-inline: .8em;
   font-size: .8em;

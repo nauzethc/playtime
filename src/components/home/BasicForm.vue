@@ -52,6 +52,7 @@ export default defineComponent({
   left: 0;
   top: 0;
   bottom: 0;
+  margin: 0 1em;
   margin-inline: 1em;
   width: 2em;
   height: 3.5em;

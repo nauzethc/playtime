@@ -146,6 +146,7 @@ export default defineComponent({
   color: var(--bg-color);
   cursor: pointer;
   opacity: 0;
+  padding: 0 1em;
   padding-inline: 1em;
   z-index: 1;
   transition: opacity .1s ease;

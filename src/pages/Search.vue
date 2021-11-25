@@ -119,6 +119,7 @@ export default defineComponent({
 }
 #search-page .spinner {
   justify-self: center;
+  margin: 1em 0;
   margin-block: 1em;
 }
 #search-page .results .game-result {

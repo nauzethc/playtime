@@ -27,6 +27,7 @@ function submit({ search }) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 2em;
   padding-inline: 2em;
 }
 #home-page .logo {

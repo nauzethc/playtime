@@ -69,6 +69,7 @@ export default defineComponent({
 .game-result {
   display: flex;
   gap: 1em;
+  padding: 1em;
   padding-block: 1em;
   padding-inline: 1em;
 }

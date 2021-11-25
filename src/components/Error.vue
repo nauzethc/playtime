@@ -26,6 +26,7 @@ export default defineComponent({
 .error {
   display: flex;
   align-items: center;
+  padding: .5em 1em;
   padding-inline: 1em;
   padding-block: .5em;
   background-color: #EF4444;

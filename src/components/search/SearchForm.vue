@@ -123,6 +123,7 @@ export default defineComponent({
 .search-form .field.search input {
   font-size: 1.2em;
   height: 3em;
+  padding: 0 3em;
   padding-inline: 3em;
   width: 100%;
 }
@@ -132,6 +133,7 @@ export default defineComponent({
   left: 0;
   top: 0;
   bottom: 0;
+  margin: 0 1em;
   margin-inline: 1em;
   width: 2em;
   height: 3.5em;
@@ -159,6 +161,7 @@ export default defineComponent({
 .search-form fieldset {
   display: grid;
   border: 0;
+  padding: 1em;
   padding-block: 1em;
   padding-inline: 1em;
   gap: 1em;

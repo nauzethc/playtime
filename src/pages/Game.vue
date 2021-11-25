@@ -140,6 +140,7 @@ export default defineComponent({
 <style>
 .spinner {
   align-self: center;
+  margin: 1em 0;
   margin-block: 1em;
 }
 #game-page {
@@ -152,6 +153,7 @@ export default defineComponent({
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding: 2em 1em;
   padding-block: 2em;
   padding-inline: 1em;
   gap: 1.5em;
@@ -200,6 +202,7 @@ export default defineComponent({
   justify-content: space-between;
   gap: 0.5em;
   border-radius: 0.5em;
+  padding: .3em .8em;
   padding-block: 0.3em;
   padding-inline: 0.8em;
   background-color: hsl(0 0% 100% / 0.1);
@@ -209,6 +212,7 @@ export default defineComponent({
 }
 #game-page .additional-data {
   background-color: var(--bg-shade-2);
+  padding: 2em 1em;
   padding-block: 2em;
   padding-inline: 1em;
   text-shadow: 0 1px hsl(0 0% 50% / 0.7);
@@ -241,11 +245,13 @@ export default defineComponent({
 #game-page .gameplays {
   display: flex;
   flex-direction: column;
+  padding: 2em 1em;
   padding-block: 2em;
   padding-inline: 1em;
   gap: 2em;
 }
 #game-page .gameplays .chart {
+  padding: 2em 1em;
   padding-block: 2em;
   padding-inline: 1em;
 }
