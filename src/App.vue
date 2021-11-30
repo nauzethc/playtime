@@ -27,7 +27,7 @@ function submit(query) {
   </main>
   <footer>
     <a href="https://twitter.com/nauzethc">Nauzet Hernandez</a>
-    <a class="with-icon" href="https://github.com/nauzethc/playtime">
+    <a class="with-icon" href="https://github.com/nauzethc/playtime-vue">
       <i class="icon github" /> Github
     </a>
   </footer>
