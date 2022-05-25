@@ -9,7 +9,7 @@
     "lint": "standard --plugin vue ./src/**/*.{js,vue}"
   },
   "dependencies": {
-    "howlongtobeat-api": "^1.0.2",
+    "howlongtobeat-api": "^1.0.3",
     "underscore": "^1.13.1",
     "vue": "^3.2.16",
     "vue-chart-3": "^0.5.11",
